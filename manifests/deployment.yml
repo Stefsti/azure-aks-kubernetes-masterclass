@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "mykubecluster-fee4"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "mykubecluster-fee4"
+  template:
+    metadata:
+      labels:
+        app: "mykubecluster-fee4"
+    spec:
+      containers:
+        - name: "mykubecluster-fee4"
+          image: "mykubehc.azurecr.io/mykubecluster"
+          ports:
+          - containerPort: 80
